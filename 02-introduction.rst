@@ -96,7 +96,7 @@ loop:
        from itertools import accumulate
        # Only available from Python 3.6
        steps = random.choices([-1,+1], k=n)
-       return [0]+list(accumulate(steps))
+       return [0]+list(accumulate(steps)) 
 
     walk = random_walk_faster(1000)
    
@@ -134,6 +134,8 @@ Not too difficult, but we gained a factor 500x using NumPy:
    >>> timeit("random_walk_fastest(n=10000)", globals())
    1000 loops, best of 3: 14 usec per loop
 
+Hence, vectorization helps in optimizing the code to run faster, giving us 
+an advantage in time complexity.
 
 This book is about vectorization, be it at the code or problem level. We'll
 see this difference is important before looking at custom vectorization.
